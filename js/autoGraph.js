@@ -1,4 +1,4 @@
-import { Uuid } from "./uuidCreator";
+import { Uuid } from "./uuidCreator.js";
 
 class Autographing {
     constructor(canvasName) {
@@ -14,12 +14,12 @@ class Autographing {
             button.addEventListener('mousedown', () => {
                 const nameField = document.getElementById("autoGraphName");
                 const uuid = new Uuid();
-                console.log(uuid);
+                const id = uuid.id();
                 const name = nameField ? nameField.value : "";
                 const dataUrl = canvas.toDataURL();
                 const link = document.createElement('a');
                 link.href = dataUrl;
-                link.download = `${name}_myAutoGraph.jpg`;
+                link.download = `${name}_${id}_myAutoGraph.jpg`;
                 link.click();
             })
         };
