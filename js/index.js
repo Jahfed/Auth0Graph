@@ -7,3 +7,4 @@ import { Autographing } from "./autoGraph.js";
 
 const myAutoGraph = new Autographing("autoGraph");
 myAutoGraph.sign();
+myAutoGraph.save("saveGraph");
