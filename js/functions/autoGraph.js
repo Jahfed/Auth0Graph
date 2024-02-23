@@ -1,9 +1,9 @@
-import { Uuid } from "./uuidCreator.js";
+import { Uuid } from "../utils/uuidCreator.js";
+import { camSign } from "../utils/camSign.js";
 
 class Autographing {
     constructor(canvasName) {
         const canvas = document.getElementById(canvasName);
-
         const ctx = canvas.getContext("2d");
 
         canvas.width = 400;
@@ -23,6 +23,24 @@ class Autographing {
                 link.click();
             })
         };
+
+        this.fotoSign = function (option) {
+            let toggleScan = true;
+            option == "albumSign" && album();
+            option == "camSign";
+
+            const scanButton = document.getElementById("scan");
+            scanButton.addEventListener('mousedown', () => {
+                scanButton.innerText = toggleScan ? "stop scanning" : "scan image";
+                toggleScan ? cam() : cam(false);
+                toggleScan = !toggleScan;
+            });
+            function cam(play = true) {
+                if (play) { console.log("camera started, start scanning..."); const myCam = new camSign(canvasName); myCam.start(); }
+                else { console.log("stop camera"); }
+            }
+            function album() { console.log("album") };
+        }
 
         this.sign = function () {
             let draw, clear, lastX = 0, lastY = 0;

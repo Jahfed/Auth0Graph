@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "autograph creator for location permits",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "nodemon js/index.js",
     "test": "test"
