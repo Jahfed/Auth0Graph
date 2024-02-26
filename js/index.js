@@ -3,9 +3,8 @@ import { Autographing } from "./functions/autoGraph.js";
 
 const myAutoGraph = new Autographing("autoGraph");
 myAutoGraph.fotoSign("camSign");
-
-const myAutoGraphNew = new Autographing("autoGraph");
-myAutoGraphNew.sign();
+myAutoGraph.fotoSign("imgSign");
+myAutoGraph.sign();
 
 myAutoGraph.save("saveGraph");
 

@@ -1,13 +1,19 @@
 class Uuid {
     constructor() {
-        this.id = () => {
-            let date = new Date().getTime();
-            const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-                const random = (date + Math.random() * 16) % 16 | 0;
-                date = Math.floor(date / 16);
-                return (c == 'x' ? random : (random & 0x3 | 0x8)).toString(16);
-            })
-            return uuid
+    }
+    async id() {
+        try {
+            const uuidUrl = "http://localhost:3000/tools/uuid";
+            const response = await fetch(uuidUrl);
+
+            if (response.ok) {
+                const data = await response.json();
+                return data;
+            } else {
+                throw new Error("Failed to fetch UUID");
+            }
+        } catch (error) {
+            throw new Error("Error occurred while fetching UUID: " + error.message);
         }
     }
 }

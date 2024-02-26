@@ -5,13 +5,16 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon js/index.js",
-    "test": "test"
+    "dev": "nodemon js/api/index.js",
+    "test": "nodemon js/api/index.js"
   },
   "author": "Jahfed Wismans",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
+    "csrf": "^3.1.0",
     "express": "^4.18.2",
+    "node-tesseract-ocr": "^2.2.1",
     "prisma": "^5.10.1",
     "uuid": "^9.0.1"
   }
