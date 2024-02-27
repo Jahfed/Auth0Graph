@@ -9,15 +9,15 @@ class Autographing {
 
     save(buttonName) {
         const canvas = document.getElementById(this.canvasName);
-        canvas.width = 400;
-        canvas.height = 200;
+        canvas.width = 600;
+        canvas.height = 300;
 
         const button = document.getElementById(buttonName);
         button.addEventListener('mousedown', () => {
             const nameField = document.getElementById("autoGraphName");
             const uuid = new Uuid();
             const id = uuid.id().then(id => {
-                alert(id);
+                console.log(id);
                 const name = nameField ? nameField.value : "";
                 const dataUrl = canvas.toDataURL();
                 const link = document.createElement('a');

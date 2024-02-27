@@ -33,6 +33,7 @@ class imgSign {
         })
 
         canvas.addEventListener('dblclick', () => {
+            fileInput.value = "";
             ctx.clearRect(0, 0, canvas.width, canvas.height);
         })
 

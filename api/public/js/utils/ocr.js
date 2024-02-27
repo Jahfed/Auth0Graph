@@ -19,7 +19,7 @@ class ocrImg {
             return text;
         }
 
-        getTextFromImage().then(info => { console.log(info); ocrOutput.innerText = info; });
+        getTextFromImage().then(info => { console.log(info); ocrOutput.value = info ? info : "no text found..."; }).catch(error => { ocrOutput.innerText = error; });
     }
 }
 
