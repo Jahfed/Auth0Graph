@@ -9,7 +9,7 @@ class imgSign {
     }
 
     load() {
-        const { fileInput, canvas, ctx } = this;
+        const { fileInput, canvas, ctx, readButton } = this;
         const canvasRatio = canvas.width / canvas.height;
 
         fileInput.addEventListener('change', (e) => {
@@ -36,8 +36,8 @@ class imgSign {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
         })
 
-        this.readButton.addEventListener('onclick', () => {
-            const myRead = new ocrImg;
+        readButton.addEventListener('click', () => {
+            const myRead = new ocrImg(canvas);
             myRead.read();
         })
 

@@ -16,10 +16,12 @@
                 text</button></span>
         <div id="camSign" hidden></div>
         <canvas id="autoGraph" class="autoGraph canvas"></canvas>
-        <span class="info">Doubleclick to clear the field</span>
-        <button id="saveGraph" class="saveButton">save autoGraph</button>
+        <span id="ocrOutput"></span>
+        <span class="info">Doubleclick to clear the field
+            <button id="saveGraph" class="saveButton">save autoGraph</button></span><br>
     </div>
-    <script src="./js/index.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+    <script src="js/index.js" type="module"></script>
 </body>
 
 
